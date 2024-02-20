@@ -1,0 +1,200 @@
+:root {
+    --light: #fefeff;
+    --light-grey: #cfe2ef;
+    --dark: #0d1b1e;
+    --dark-blue: #144a85;
+    --red: #d74b47;
+    --yellow: #f8cd67;
+    --box-shadow: -2px 2px 3px rgba(0, 0, 0, 0.4);
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+@font-face {
+    font-family: 'Kyiv';
+    src: url('assets/KyivTypeSans-VarGX.woff2');
+    font-weight: 0 1000;
+    font-display: swap;
+}
+
+body {
+    font-family: 'Kyiv', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    width: 100vw;
+    background: var(--light);
+    color: var(--dark);
+    overflow-y: hidden;
+}
+
+button {
+    display: block;
+    padding: 10px;
+    margin: 15px 0;
+    border: none;
+    border-radius: 3px;
+    border-radius: 3p x;
+    box-shadow: var(--box-shadow);
+}
+
+.btn-green {
+    background: #18A558 !important;
+}
+
+input[type='text'] {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid var(--dark);
+    outline: none;
+    box-shadow: var(--box-shadow);
+}
+
+input[type='text']:focus {
+    outline: 1px solid var(--dark-blue);
+}
+
+/* Utility Classes */
+.variable-font {
+    font-size: 40px;
+    font-weight: 1;
+    font-variation-settings:
+        "wght" 0, "CONT" 0, "MIDL" 0;
+    transition: font-variation-settings 1s;
+    animation-name: animate-font;
+    animation-direction: alternate-reverse;
+    animation-duration: 5s;
+    animation-iteration-count: infinite;
+}
+
+.editItem {
+    background: #fadc94 !important;
+}
+
+/* Shopping list */
+#shopping-list {
+    background: var(--light-grey);
+    color: var(--dark);
+    padding: 1.5rem;
+    border-radius: 0.5rem;
+    width: 50vw;
+    max-width: 500px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+/* Header */
+header {
+    display: flex;
+    padding: 10px 0;
+}
+
+header .logo img {
+    width: 60px;
+}
+
+header .title {
+    align-self: center;
+}
+
+header .title h1 {
+    font-size: 2rem;
+
+}
+
+/* Input Section */
+.input-section button#submit-btn {
+    color: var(--light);
+    background: var(--dark-blue);
+}
+
+
+/* Display Section */
+input#filter-item {
+    border: none;
+    border-bottom: 1px solid var(--dark);
+    background: inherit;
+    box-shadow: none;
+}
+
+input#filter-item:focus {
+    border: none;
+    border-bottom: 2px solid var(--dark);
+    outline: none;
+}
+
+.display-items {
+    display: flex;
+    flex-wrap: wrap;
+    max-height: 350px;
+    overflow-y: scroll;
+    -ms-overflow-style: none;
+    /* Internet Explorer 10+ */
+    scrollbar-width: none;
+    /* Firefox */
+}
+
+.display-items::-webkit-scrollbar {
+    display: none;
+    /* Safari and Chrome */
+}
+
+.display-items .item {
+    width: 100%;
+    padding: 10px;
+    background-color: var(--yellow);
+    color: var(--light);
+    margin: 5px 0;
+    border-radius: 3px;
+    display: flex;
+    justify-content: space-between;
+    box-shadow: var(--box-shadow);
+}
+
+.display-items .item .clr-icon {
+    margin: 0 10px;
+}
+
+.clr-icon {
+    color: var(--red);
+}
+
+button#clear-items {
+    background: var(--red);
+    color: var(--light);
+}
+
+/* Animations */
+@keyframes animate-font {
+    0% {
+        font-variation-settings:
+            "wght" 0, "CONT" 0, "MIDL" 0;
+    }
+
+    100% {
+        font-variation-settings:
+            "wght" 800, "CONT" 1000, "MIDL" -1000;
+    }
+}
+
+@media (max-width: 500px) {
+    body {
+        height: 100%;
+        align-items: baseline;
+        padding-top: 20px;
+    }
+
+    #shopping-list {
+        width: 90vw;
+        max-width: 90%;
+    }
+
+    .display-items {
+        max-height: 40vh;
+    }
+}
